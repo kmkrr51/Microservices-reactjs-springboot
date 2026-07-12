@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Project Metadata -->
+  <groupId>com.snowrepo</groupId>
+  <artifactId>snowrepo-springboot</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>ServiceNow Microservices - Spring Boot</name>
+  <description>Custom Java 21, Spring Boot 3.x microservices for ServiceNow replacement</description>
+  <url>https://github.com/your-org/snowrepo-springboot</url>
+
+  <!-- Organization -->
+  <organization>
+    <name>Your Organization</name>
+    <url>https://your-org.com</url>
+  </organization>
+
+  <!-- Developers -->
+  <developers>
+    <developer>
+      <id>dev-team</id>
+      <name>Development Team</name>
+      <email>dev-team@your-org.com</email>
+      <organization>Your Organization</organization>
+    </developer>
+  </developers>
+
+  <!-- License -->
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <!-- Source Control -->
+  <scm>
+    <url>https://github.com/your-org/snowrepo-springboot</url>
+    <connection>scm:git:https://github.com/your-org/snowrepo-springboot.git</connection>
+    <developerConnection>scm:git:https://github.com/your-org/snowrepo-springboot.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <!-- Issue Tracking -->
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/your-org/snowrepo-springboot/issues</url>
+  </issueManagement>
+
+  <!-- CI/CD -->
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/your-org/snowrepo-springboot/actions</url>
+  </ciManagement>
+
+  <!-- Properties -->
+  <properties>
+    <!-- Project Properties -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+
+    <!-- Dependency Versions -->
+    <spring-boot.version>3.1.0</spring-boot.version>
+    <spring-cloud.version>2022.0.3</spring-cloud.version>
+    <java.version>21</java.version>
+
+    <!-- Plugin Versions -->
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>3.0.0</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>3.0.0</maven-failsafe-plugin.version>
+    <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+    <sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
+    <maven-shade-plugin.version>3.4.1</maven-shade-plugin.version>
+    <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
+
+    <!-- Testing Versions -->
+    <junit-jupiter.version>5.9.3</junit-jupiter.version>
+    <mockito.version>5.3.1</mockito.version>
+    <testcontainers.version>1.19.0</testcontainers.version>
+
+    <!-- Code Quality -->
+    <sonar.projectKey>snowrepo-springboot</sonar.projectKey>
+    <sonar.host.url>http://localhost:9000</sonar.host.url>
+    <sonar.coverage.exclusions>**/config/**,**/dto/**,**/entity/**</sonar.coverage.exclusions>
+    <sonar.exclusions>**/test/**</sonar.exclusions>
+  </properties>
+
+  <!-- Dependency Management -->
+  <dependencyManagement>
+    <dependencies>
+      <!-- Spring Boot BOM -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Spring Cloud BOM -->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- JUnit 5 -->
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>${junit-jupiter.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>${junit-jupiter.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <!-- Mockito -->
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <!-- TestContainers -->
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>testcontainers-bom</artifactId>
+        <version>${testcontainers.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <!-- Common Dependencies -->
+  <dependencies>
+    <!-- Spring Boot Starters -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+
+    <!-- Logging -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-logging</artifactId>
+    </dependency>
+
+    <!-- JSON Processing -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+    </dependency>
+
+    <!-- Lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- Testing -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <!-- Build Plugins -->
+  <build>
+    <pluginManagement>
+      <plugins>
+        <!-- Compiler Plugin -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
+            <release>21</release>
+          </configuration>
+        </plugin>
+
+        <!-- Surefire Plugin (Unit Tests) -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+          <configuration>
+            <includes>
+              <include>**/*Test.java</include>
+              <include>**/*Tests.java</include>
+            </includes>
+          </configuration>
+        </plugin>
+
+        <!-- Failsafe Plugin (Integration Tests) -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${maven-failsafe-plugin.version}</version>
+          <configuration>
+            <includes>
+              <include>**/*IT.java</include>
+              <include>**/*ITest.java</include>
+            </includes>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- JaCoCo Plugin (Code Coverage) -->
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>report</id>
+              <phase>test</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>jacoco-check</id>
+              <goals>
+                <goal>check</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <rule>
+                    <element>PACKAGE</element>
+                    <excludes>
+                      <exclude>*Test</exclude>
+                    </excludes>
+                    <limits>
+                      <limit>
+                        <counter>LINE</counter>
+                        <value>COVEREDRATIO</value>
+                        <minimum>0.80</minimum>
+                      </limit>
+                    </limits>
+                  </rule>
+                </rules>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- SonarQube Plugin -->
+        <plugin>
+          <groupId>org.sonarsource.scanner.maven</groupId>
+          <artifactId>sonar-maven-plugin</artifactId>
+          <version>${sonar-maven-plugin.version}</version>
+        </plugin>
+
+        <!-- Spring Boot Maven Plugin -->
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+          <configuration>
+            <excludes>
+              <exclude>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+              </exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+
+        <!-- Shade Plugin -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>${maven-shade-plugin.version}</version>
+        </plugin>
+
+        <!-- Assembly Plugin -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>${maven-assembly-plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <!-- Compiler Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+
+      <!-- Surefire Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+
+      <!-- JaCoCo Plugin -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Build Profiles -->
+  <profiles>
+    <!-- Development Profile -->
+    <profile>
+      <id>dev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <maven.test.skip>false</maven.test.skip>
+      </properties>
+    </profile>
+
+    <!-- Staging Profile -->
+    <profile>
+      <id>staging</id>
+      <properties>
+        <maven.test.skip>false</maven.test.skip>
+      </properties>
+    </profile>
+
+    <!-- Production Profile -->
+    <profile>
+      <id>prod</id>
+      <properties>
+        <maven.test.skip>false</maven.test.skip>
+      </properties>
+    </profile>
+
+    <!-- CI/CD Profile -->
+    <profile>
+      <id>ci</id>
+      <properties>
+        <maven.test.skip>false</maven.test.skip>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>report</id>
+                <phase>test</phase>
+                <goals>
+                  <goal>report</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <!-- Modules -->
+  <modules>
+    <module>shared-domain</module>
+    <module>shared-exceptions</module>
+    <module>shared-utils</module>
+    <module>shared-logging</module>
+    <module>api-gateway</module>
+    <module>cmdb</module>
+    <module>itsm</module>
+    <module>itom</module>
+    <module>itam</module>
+  </modules>
+
+  <!-- Repositories -->
+  <repositories>
+    <repository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <url>https://repo.maven.apache.org/maven2</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <!-- Distribution Management -->
+  <distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <url>https://your-nexus.com/repository/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>https://your-nexus.com/repository/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
