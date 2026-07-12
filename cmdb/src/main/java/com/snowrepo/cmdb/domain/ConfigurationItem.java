@@ -35,6 +35,7 @@ public class ConfigurationItem extends AggregateRoot {
   @Column(name = "id")
   private UUID id;
 
+
   @NotBlank(message = "CI name is required")
   @Column(name = "name", nullable = false)
   private String name;
@@ -99,7 +100,7 @@ public class ConfigurationItem extends AggregateRoot {
         .version(1L)
         .build();
 
-    ci.recordDomainEvent(new ConfigurationItemCreatedEvent(
+    ci.addDomainEvent(new ConfigurationItemCreatedEvent(
         ci.getId(),
         ci.getName(),
         ci.getType(),
@@ -117,7 +118,7 @@ public class ConfigurationItem extends AggregateRoot {
       this.updatedBy = updatedBy;
       this.version = this.version + 1;
 
-      recordDomainEvent(new ConfigurationItemUpdatedEvent(
+      addDomainEvent(new ConfigurationItemUpdatedEvent(
           this.getId(),
           this.getName(),
           this.getType(),
@@ -133,7 +134,7 @@ public class ConfigurationItem extends AggregateRoot {
       this.updatedBy = updatedBy;
       this.version = this.version + 1;
 
-      recordDomainEvent(new ConfigurationItemStatusChangedEvent(
+      addDomainEvent(new ConfigurationItemStatusChangedEvent(
           this.getId(),
           this.getName(),
           this.getType(),

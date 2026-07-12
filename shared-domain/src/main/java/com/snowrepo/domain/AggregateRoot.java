@@ -31,9 +31,9 @@ public abstract class AggregateRoot implements Serializable {
   private LocalDateTime createdAt;
 
   /**
-   * User ID who created the aggregate root.
+   * User who created the aggregate root.
    */
-  private UUID createdBy;
+  private String createdBy;
 
   /**
    * Timestamp when the aggregate root was last updated.
@@ -41,9 +41,9 @@ public abstract class AggregateRoot implements Serializable {
   private LocalDateTime updatedAt;
 
   /**
-   * User ID who last updated the aggregate root.
+   * User who last updated the aggregate root.
    */
-  private UUID updatedBy;
+  private String updatedBy;
 
   /**
    * Version number for optimistic locking.
@@ -118,9 +118,9 @@ public abstract class AggregateRoot implements Serializable {
   /**
    * Updates the timestamp and user for the last update.
    *
-   * @param updatedBy the user ID who updated the aggregate root
+   * @param updatedBy the user who updated the aggregate root
    */
-  protected void markAsUpdated(UUID updatedBy) {
+  protected void markAsUpdated(String updatedBy) {
     this.updatedAt = LocalDateTime.now();
     this.updatedBy = updatedBy;
   }

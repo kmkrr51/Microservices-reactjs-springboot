@@ -110,7 +110,7 @@ public class DiscoveredAsset extends AggregateRoot {
         .version(1L)
         .build();
 
-    asset.recordDomainEvent(new AssetDiscoveredEvent(
+    asset.addDomainEvent(new AssetDiscoveredEvent(
         asset.getId(),
         asset.getName(),
         asset.getAssetType(),
@@ -127,7 +127,7 @@ public class DiscoveredAsset extends AggregateRoot {
       this.updatedBy = updatedBy;
       this.version = this.version + 1;
 
-      recordDomainEvent(new AssetStatusChangedEvent(
+      addDomainEvent(new AssetStatusChangedEvent(
           this.getId(),
           this.getName(),
           this.getAssetType(),
@@ -142,7 +142,7 @@ public class DiscoveredAsset extends AggregateRoot {
     this.updatedBy = updatedBy;
     this.version = this.version + 1;
 
-    recordDomainEvent(new AssetRediscoveredEvent(
+    addDomainEvent(new AssetRediscoveredEvent(
         this.getId(),
         this.getName(),
         this.getAssetType()

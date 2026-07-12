@@ -58,6 +58,19 @@ public abstract class DomainEvent implements Serializable {
   private UUID userId;
 
   /**
+   * Protected no-arg constructor. Required by Lombok-generated constructors in
+   * subclasses (e.g. {@code @AllArgsConstructor}), which implicitly call
+   * {@code super()}. Subclasses that use it override {@link #getAggregateId()}
+   * and {@link #getAggregateType()} to supply those values.
+   */
+  protected DomainEvent() {
+    this.eventId = UUID.randomUUID();
+    this.occurredAt = LocalDateTime.now();
+    this.aggregateVersion = 1L;
+    this.correlationId = UUID.randomUUID();
+  }
+
+  /**
    * Protected constructor for subclasses.
    *
    * @param aggregateId the aggregate root ID

@@ -111,7 +111,7 @@ public class Incident extends AggregateRoot {
         .version(1L)
         .build();
 
-    incident.recordDomainEvent(new IncidentCreatedEvent(
+    incident.addDomainEvent(new IncidentCreatedEvent(
         incident.getId(),
         incident.getIncidentNumber(),
         incident.getTitle(),
@@ -133,7 +133,7 @@ public class Incident extends AggregateRoot {
         this.resolvedAt = LocalDateTime.now();
       }
 
-      recordDomainEvent(new IncidentStatusChangedEvent(
+      addDomainEvent(new IncidentStatusChangedEvent(
           this.getId(),
           this.getIncidentNumber(),
           newStatus
@@ -148,7 +148,7 @@ public class Incident extends AggregateRoot {
       this.updatedBy = updatedBy;
       this.version = this.version + 1;
 
-      recordDomainEvent(new IncidentAssignedEvent(
+      addDomainEvent(new IncidentAssignedEvent(
           this.getId(),
           this.getIncidentNumber(),
           assignee

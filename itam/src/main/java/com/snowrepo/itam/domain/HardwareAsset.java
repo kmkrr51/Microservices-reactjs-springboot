@@ -125,7 +125,7 @@ public class HardwareAsset extends AggregateRoot {
         .version(1L)
         .build();
 
-    asset.recordDomainEvent(new HardwareAssetCreatedEvent(
+    asset.addDomainEvent(new HardwareAssetCreatedEvent(
         asset.getId(),
         asset.getAssetTag(),
         asset.getName(),
@@ -143,7 +143,7 @@ public class HardwareAsset extends AggregateRoot {
       this.updatedBy = updatedBy;
       this.version = this.version + 1;
 
-      recordDomainEvent(new HardwareAssetStatusChangedEvent(
+      addDomainEvent(new HardwareAssetStatusChangedEvent(
           this.getId(),
           this.getAssetTag(),
           newStatus
@@ -158,7 +158,7 @@ public class HardwareAsset extends AggregateRoot {
       this.updatedBy = updatedBy;
       this.version = this.version + 1;
 
-      recordDomainEvent(new HardwareAssetAssignedEvent(
+      addDomainEvent(new HardwareAssetAssignedEvent(
           this.getId(),
           this.getAssetTag(),
           assignee
