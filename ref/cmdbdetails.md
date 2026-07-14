@@ -1,4 +1,4 @@
-# ServiceNow CMDB (Configuration Management Database) - Detailed Summary
+﻿# microservices CMDB (Configuration Management Database) - Detailed Summary
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -18,14 +18,14 @@
 
 ## Overview
 
-The Configuration Management Database (CMDB) is the central repository in ServiceNow that stores and manages information about all IT infrastructure components and their relationships. It serves as the single source of truth for IT operations, providing visibility into the entire IT landscape and enabling better decision-making across all ServiceNow modules.
+The Configuration Management Database (CMDB) is the central repository in microservices that stores and manages information about all IT infrastructure components and their relationships. It serves as the single source of truth for IT operations, providing visibility into the entire IT landscape and enabling better decision-making across all microservices modules.
 
 ---
 
 ## What is CMDB?
 
 ### Definition
-The CMDB is a database that maintains detailed information about all configuration items (CIs) in an organization's IT infrastructure, including their attributes, relationships, and dependencies. It acts as the foundation for IT Service Management (ITSM) and other ServiceNow applications.
+The CMDB is a database that maintains detailed information about all configuration items (CIs) in an organization's IT infrastructure, including their attributes, relationships, and dependencies. It acts as the foundation for IT Service Management (ITSM) and other microservices applications.
 
 ### Purpose
 - **Single Source of Truth** – Provides accurate, up-to-date information about IT infrastructure
@@ -71,7 +71,7 @@ Each CI has attributes that describe its characteristics and properties:
 - **Relationship Attributes** – Links to related CIs
 
 ### CI Classes
-CIs are organized into classes based on their type and function. ServiceNow provides out-of-the-box (OOB) CI classes:
+CIs are organized into classes based on their type and function. microservices provides out-of-the-box (OOB) CI classes:
 
 **Hardware Classes:**
 - `cmdb_ci_computer` – Computers and workstations
@@ -599,7 +599,7 @@ Detects and reports duplicate CIs.
 
 ---
 
-## CMDB and Other ServiceNow Modules
+## CMDB and Other microservices Modules
 
 ### ITSM Integration
 - **Incident Management** – Uses CMDB for incident context and impact analysis
@@ -623,7 +623,7 @@ Detects and reports duplicate CIs.
 
 ## Conclusion
 
-The CMDB is the foundation of ServiceNow's IT operations capabilities, providing a comprehensive view of IT infrastructure and services. By implementing best practices, maintaining data quality, and leveraging automation through discovery and the IRE, organizations can maximize the value of their CMDB and improve IT service delivery, incident resolution, and change management.
+The CMDB is the foundation of microservices's IT operations capabilities, providing a comprehensive view of IT infrastructure and services. By implementing best practices, maintaining data quality, and leveraging automation through discovery and the IRE, organizations can maximize the value of their CMDB and improve IT service delivery, incident resolution, and change management.
 
 A well-maintained CMDB enables:
 - Faster incident resolution

@@ -1,7 +1,7 @@
-# Windsurf AI System Rules: Enterprise PaaS Engine (Java 21 + Spring Boot 3.x + DDD)
+﻿# Windsurf AI System Rules: Enterprise PaaS Engine (Java 21 + Spring Boot 3.x + DDD)
 
 ## 🎯 Platform Core Vision & Vibe Engineering Goal
-* **Target System**: A high-performance, multitenant Application Platform-as-a-Service (a-PaaS) reminiscent of ServiceNow (dynamic schemas, metadata-driven UI, workflows, and extensibility).
+* **Target System**: A high-performance, multitenant Application Platform-as-a-Service (a-PaaS) reminiscent of microservices (dynamic schemas, metadata-driven UI, workflows, and extensibility).
 * **AI Persona**: Act as a Principal Platform Architect. You are not building a simple business app; you are building an *engine* that interprets metadata to run tenant apps.
 * **Architectural Blueprint**: Strict Domain-Driven Design (DDD) with Hexagonal Layering. Pure business kernels, zero framework dependencies in the core.
 * **Core Tech**: Java 21 (Virtual Threads optimized), Spring Boot 3.x, PostgreSQL (JSONB & Multi-tenant schemas), Jakarta EE.

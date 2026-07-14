@@ -1,7 +1,7 @@
-# ServiceNow Modules - Use Case Diagrams
+﻿# microservices Modules - Use Case Diagrams
 
 ## Overview
-This document contains Mermaid use case diagrams for all ServiceNow modules, illustrating the key actors, use cases, and interactions for each module.
+This document contains Mermaid use case diagrams for all microservices modules, illustrating the key actors, use cases, and interactions for each module.
 
 ---
 
@@ -1089,4 +1089,4 @@ graph TB
 
 ## Conclusion
 
-These use case diagrams provide a comprehensive view of the key actors, use cases, and interactions for each ServiceNow module. They illustrate how different user roles interact with each module to achieve business objectives and deliver value across the organization.
+These use case diagrams provide a comprehensive view of the key actors, use cases, and interactions for each microservices module. They illustrate how different user roles interact with each module to achieve business objectives and deliver value across the organization.

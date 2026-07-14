@@ -1,8 +1,8 @@
-# Shared Exceptions Module
+﻿# Shared Exceptions Module
 
 ## Overview
 
-The `shared-exceptions` module provides a consistent exception hierarchy for all microservices in the ServiceNow microservices platform. It ensures uniform error handling and HTTP status code mapping across the entire system.
+The `shared-exceptions` module provides a consistent exception hierarchy for all microservices in the microservices microservices platform. It ensures uniform error handling and HTTP status code mapping across the entire system.
 
 ## Purpose
 

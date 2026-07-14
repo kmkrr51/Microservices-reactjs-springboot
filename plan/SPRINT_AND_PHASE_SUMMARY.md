@@ -1,5 +1,5 @@
-# Sprint-Wise & Phase-Wise Plan Summary
-## ServiceNow Microservices Implementation
+﻿# Sprint-Wise & Phase-Wise Plan Summary
+## microservices Microservices Implementation
 
 **Document Version**: 1.0  
 **Date**: July 12, 2026  
@@ -10,7 +10,7 @@
 
 ## Executive Summary
 
-This document provides a comprehensive overview of the sprint-wise and phase-wise implementation plans for the ServiceNow microservices project. The project is structured into 5 phases over 15 months, with each phase consisting of 6-7 two-week sprints.
+This document provides a comprehensive overview of the sprint-wise and phase-wise implementation plans for the microservices microservices project. The project is structured into 5 phases over 15 months, with each phase consisting of 6-7 two-week sprints.
 
 **Key Metrics**:
 - **Total Duration**: 15 months

@@ -1,4 +1,4 @@
-# Second Module Development Summary
+﻿# Second Module Development Summary
 ## Shared Exceptions Module - Complete Implementation
 
 **Module**: shared-exceptions  
@@ -11,7 +11,7 @@
 
 ## Overview
 
-The second module of the ServiceNow microservices backend has been successfully implemented. The `shared-exceptions` module provides a consistent exception hierarchy for all microservices.
+The second module of the microservices microservices backend has been successfully implemented. The `shared-exceptions` module provides a consistent exception hierarchy for all microservices.
 
 ---
 

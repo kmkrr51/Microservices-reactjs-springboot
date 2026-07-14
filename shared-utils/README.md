@@ -1,8 +1,8 @@
-# Shared Utils Module
+﻿# Shared Utils Module
 
 ## Overview
 
-The `shared-utils` module provides utility classes and helper functions for common operations across all microservices in the ServiceNow microservices platform.
+The `shared-utils` module provides utility classes and helper functions for common operations across all microservices in the microservices microservices platform.
 
 ## Purpose
 

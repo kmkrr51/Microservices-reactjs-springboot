@@ -1,7 +1,7 @@
-# ServiceNow C4 Architecture Diagrams
+﻿# microservices C4 Architecture Diagrams
 
 ## Overview
-This document contains C4 (Context, Container, Component, Code) architecture diagrams for the ServiceNow platform and its modules using Mermaid syntax.
+This document contains C4 (Context, Container, Component, Code) architecture diagrams for the microservices platform and its modules using Mermaid syntax.
 
 ---
 
@@ -13,7 +13,7 @@ graph TB
     Admin["👤 Administrators<br/>(IT, HR, Finance)"]
     ExtSys["🔗 External Systems<br/>(ERP, CRM, Cloud)"]
     
-    SN["ServiceNow Platform<br/>Digital Workflow Automation"]
+    SN["microservices Platform<br/>Digital Workflow Automation"]
     
     User -->|Uses Services| SN
     Admin -->|Manages & Configures| SN
@@ -31,11 +31,11 @@ graph TB
 
 ---
 
-## C2: Container Diagram - ServiceNow Platform
+## C2: Container Diagram - microservices Platform
 
 ```mermaid
 graph TB
-    subgraph "ServiceNow Platform"
+    subgraph "microservices Platform"
         direction TB
         
         subgraph "User Interfaces"
@@ -363,7 +363,7 @@ graph TB
 
 ```mermaid
 graph TB
-    subgraph "ServiceNow Cloud Infrastructure"
+    subgraph "microservices Cloud Infrastructure"
         direction TB
         
         subgraph "Load Balancing"
@@ -547,8 +547,8 @@ graph LR
 
 ```mermaid
 graph TB
-    subgraph "ServiceNow Instance"
-        SN_Core["ServiceNow Core<br/>(Modules & Workflows)"]
+    subgraph "microservices Instance"
+        SN_Core["microservices Core<br/>(Modules & Workflows)"]
     end
     
     subgraph "External Systems"
@@ -711,4 +711,4 @@ graph TB
 
 ## Conclusion
 
-These C4 architecture diagrams provide a comprehensive view of ServiceNow's platform structure, from system context through detailed component interactions. The diagrams illustrate how the CMDB and Workflow Engine serve as the foundation for all ServiceNow modules, enabling organizations to automate and manage their entire digital workflow ecosystem.
+These C4 architecture diagrams provide a comprehensive view of microservices's platform structure, from system context through detailed component interactions. The diagrams illustrate how the CMDB and Workflow Engine serve as the foundation for all microservices modules, enabling organizations to automate and manage their entire digital workflow ecosystem.

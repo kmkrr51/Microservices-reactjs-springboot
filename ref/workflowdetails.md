@@ -1,4 +1,4 @@
-# ServiceNow Workflow Engine - Detailed Summary
+﻿# microservices Workflow Engine - Detailed Summary
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -19,7 +19,7 @@
 
 ## Overview
 
-The Workflow Engine is the core orchestration component of ServiceNow that automates multi-step business processes. It enables organizations to define, execute, and manage complex workflows that coordinate activities, approvals, notifications, and record operations across the entire platform.
+The Workflow Engine is the core orchestration component of microservices that automates multi-step business processes. It enables organizations to define, execute, and manage complex workflows that coordinate activities, approvals, notifications, and record operations across the entire platform.
 
 ---
 
@@ -474,7 +474,7 @@ Traditional workflow engine (still supported).
 ## Flow Designer
 
 ### Overview
-Flow Designer is the modern, low-code/no-code automation platform built on the ServiceNow AI Platform.
+Flow Designer is the modern, low-code/no-code automation platform built on the microservices AI Platform.
 
 ### Key Features
 
@@ -488,7 +488,7 @@ Flow Designer is the modern, low-code/no-code automation platform built on the S
 Reusable automation components that perform specific tasks.
 
 **Action Types:**
-- **Core Actions** – ServiceNow-provided actions
+- **Core Actions** – microservices-provided actions
 - **Custom Actions** – Organization-created actions
 - **Integration Actions** – Third-party system actions
 
@@ -557,7 +557,7 @@ Store and manipulate data during flow execution.
 - **String** – Text data
 - **Number** – Numeric data
 - **Boolean** – True/False
-- **Record** – ServiceNow record
+- **Record** – microservices record
 - **Array** – Collection of items
 - **Object** – Complex data structure
 
@@ -923,7 +923,7 @@ An error occurred during execution.
 
 ---
 
-## Integration with ServiceNow Modules
+## Integration with microservices Modules
 
 ### ITSM Integration
 - **Incident Management** – Automate incident workflows
@@ -946,7 +946,7 @@ An error occurred during execution.
 
 ## Conclusion
 
-The ServiceNow Workflow Engine, particularly through Flow Designer, provides a powerful, modern platform for automating business processes. By following best practices, optimizing performance, and leveraging debugging tools, organizations can create efficient, maintainable workflows that drive operational excellence and improve service delivery.
+The microservices Workflow Engine, particularly through Flow Designer, provides a powerful, modern platform for automating business processes. By following best practices, optimizing performance, and leveraging debugging tools, organizations can create efficient, maintainable workflows that drive operational excellence and improve service delivery.
 
 **Key Takeaways:**
 - Use Flow Designer for new automation (not legacy workflows)

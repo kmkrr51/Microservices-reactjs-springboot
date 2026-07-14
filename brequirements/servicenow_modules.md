@@ -1,8 +1,8 @@
-To build an effective Application Platform-as-a-Service (aPaaS) like ServiceNow, it is essential to understand how it organizes its vast ecosystem. ServiceNow does not view modules merely as functional pages; instead, it structures them as packaged business applications built on top of a single, unified database schema platform (the Now Platform). [1, 2, 3, 4, 5] 
-ServiceNow's core architecture is divided into major Workflows (Product Suites), which are further broken down into highly specialized Applications and Modules. [6, 7, 8, 9] 
+﻿To build an effective Application Platform-as-a-Service (aPaaS) like microservices, it is essential to understand how it organizes its vast ecosystem. microservices does not view modules merely as functional pages; instead, it structures them as packaged business applications built on top of a single, unified database schema platform (the Now Platform). [1, 2, 3, 4, 5] 
+microservices's core architecture is divided into major Workflows (Product Suites), which are further broken down into highly specialized Applications and Modules. [6, 7, 8, 9] 
 ------------------------------
 ## 1. IT Workflows (The Core Flagship)
-This is the foundational pillar of ServiceNow, designed to manage IT infrastructure, services, and operations. [10, 11, 12, 13, 14] 
+This is the foundational pillar of microservices, designed to manage IT infrastructure, services, and operations. [10, 11, 12, 13, 14] 
 
 * IT Service Management (ITSM): The most widely used suite. It includes modules like Incident Management, Problem Management, Change Management, Request Management (Service Catalog), and Knowledge Management. [15, 16, 17, 18, 19] 
 * IT Operations Management (ITOM): Focuses on infrastructure visibility and health. It includes Discovery (populating the CMDB), Service Mapping, Event Management, and Cloud Governance. [20, 21, 22, 23, 24] 

@@ -1,15 +1,15 @@
-# Spring Boot Microservices Backend - ServiceNow Modules Implementation Plan
+﻿# Spring Boot Microservices Backend - microservices Modules Implementation Plan
 ## Domain-Driven Design Architecture
 
 **Date**: July 12, 2026  
-**Scope**: Complete ServiceNow suite implementation using Spring Boot microservices  
+**Scope**: Complete microservices suite implementation using Spring Boot microservices  
 **Architecture Pattern**: Domain-Driven Design (DDD) with Event-Driven Architecture
 
 ---
 
 ## Executive Summary
 
-This document outlines a comprehensive Spring Boot microservices architecture to replace the current FastAPI backend. The system will implement all 15 ServiceNow modules using Domain-Driven Design principles, ensuring scalability, maintainability, and clear domain boundaries.
+This document outlines a comprehensive Spring Boot microservices architecture to replace the current FastAPI backend. The system will implement all 15 microservices modules using Domain-Driven Design principles, ensuring scalability, maintainability, and clear domain boundaries.
 
 ### Key Objectives
 - Migrate from FastAPI monolith to Spring Boot microservices
@@ -1478,10 +1478,10 @@ PostgreSQL
 ### Maven Multi-Module Project
 
 ```
-servicenow-backend/
+microservices-backend/
 ├── pom.xml (parent)
 ├── common-module/
-│   ├── src/main/java/com/servicenow/common/
+│   ├── src/main/java/com/microservices/common/
 │   │   ├── domain/
 │   │   │   ├── ValueObject.java
 │   │   │   ├── AggregateRoot.java
@@ -1499,7 +1499,7 @@ servicenow-backend/
 │   └── pom.xml
 │
 ├── itsm-service/
-│   ├── src/main/java/com/servicenow/itsm/
+│   ├── src/main/java/com/microservices/itsm/
 │   │   ├── domain/
 │   │   │   ├── incident/
 │   │   │   ├── problem/
@@ -1523,7 +1523,7 @@ servicenow-backend/
 │   └── (similar structure)
 │
 ├── api-gateway/
-│   ├── src/main/java/com/servicenow/gateway/
+│   ├── src/main/java/com/microservices/gateway/
 │   │   ├── config/
 │   │   ├── filter/
 │   │   └── security/
@@ -1562,7 +1562,7 @@ servicenow-backend/
 
 **Step 1**: Domain Model
 ```java
-// itsm-service/src/main/java/com/servicenow/itsm/domain/incident/
+// itsm-service/src/main/java/com/microservices/itsm/domain/incident/
 public class Incident extends AggregateRoot {
   public void escalate(String reason) {
     // Business logic
@@ -1573,7 +1573,7 @@ public class Incident extends AggregateRoot {
 
 **Step 2**: Application Service
 ```java
-// itsm-service/src/main/java/com/servicenow/itsm/application/usecase/
+// itsm-service/src/main/java/com/microservices/itsm/application/usecase/
 @Service
 public class EscalateIncidentUseCase {
   public void execute(EscalateIncidentCommand command) {
@@ -1586,7 +1586,7 @@ public class EscalateIncidentUseCase {
 
 **Step 3**: API Controller
 ```java
-// itsm-service/src/main/java/com/servicenow/itsm/api/controller/
+// itsm-service/src/main/java/com/microservices/itsm/api/controller/
 @RestController
 @RequestMapping("/api/v1/incidents")
 public class IncidentController {
@@ -1602,7 +1602,7 @@ public class IncidentController {
 
 **Step 4**: Event Handler
 ```java
-// itsm-service/src/main/java/com/servicenow/itsm/infrastructure/messaging/
+// itsm-service/src/main/java/com/microservices/itsm/infrastructure/messaging/
 @Component
 public class IncidentEventHandler {
   @KafkaListener(topics = "incident.events")
@@ -1762,7 +1762,7 @@ spec:
     spec:
       containers:
       - name: itsm-service
-        image: servicenow/itsm-service:1.0.0
+        image: microservices/itsm-service:1.0.0
         ports:
         - containerPort: 8080
         env:

@@ -1,8 +1,8 @@
-# Shared Domain Module
+﻿# Shared Domain Module
 
 ## Overview
 
-The `shared-domain` module provides base classes and interfaces for implementing Domain-Driven Design (DDD) patterns across all microservices in the ServiceNow microservices platform.
+The `shared-domain` module provides base classes and interfaces for implementing Domain-Driven Design (DDD) patterns across all microservices in the microservices microservices platform.
 
 ## Purpose
 

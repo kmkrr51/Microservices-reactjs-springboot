@@ -1,5 +1,5 @@
-# Spring Boot Microservices Backend - Business Requirements Document
-## Custom Development for ServiceNow Platform Integration
+﻿# Spring Boot Microservices Backend - Business Requirements Document
+## Custom Development for microservices Platform Integration
 
 **Document Version**: 1.0  
 **Date**: July 12, 2026  
@@ -29,7 +29,7 @@
 
 ## Executive Summary
 
-This document defines the business requirements for developing a comprehensive Spring Boot microservices-based backend system to support ServiceNow platform integration. The system will implement 12 core microservices covering ITSM, ITOM, ITAM, GRC, CSM, HRSD, FSM, EAM, PPM, Finance, SecOps, and Analytics modules.
+This document defines the business requirements for developing a comprehensive Spring Boot microservices-based backend system to support microservices platform integration. The system will implement 12 core microservices covering ITSM, ITOM, ITAM, GRC, CSM, HRSD, FSM, EAM, PPM, Finance, SecOps, and Analytics modules.
 
 ### Key Business Drivers
 
@@ -92,7 +92,7 @@ This document defines the business requirements for developing a comprehensive S
 ### Out of Scope
 
 - Frontend application development (existing React frontend maintained)
-- ServiceNow platform administration and configuration
+- microservices platform administration and configuration
 - Third-party system integrations (to be defined separately)
 - Mobile application development
 - Legacy system data migration (separate project)
@@ -737,7 +737,7 @@ Each microservice implements a bounded context from Domain-Driven Design with:
 
 ### External System Integrations
 
-1. **ServiceNow Platform**
+1. **microservices Platform**
    - Bidirectional sync of master data
    - Event-driven updates
    - REST API integration

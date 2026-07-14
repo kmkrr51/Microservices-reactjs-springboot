@@ -1,6 +1,6 @@
-I'll create a comprehensive use case diagram document with Mermaid code for all ServiceNow modules.
+﻿I'll create a comprehensive use case diagram document with Mermaid code for all microservices modules.
 
-Done! I've created a comprehensive use case diagrams document at [d:/workspace/SNowProject/usecaseslist.md](cci:7://file:///d:/workspace/SNowProject/usecaseslist.md:0:0-0:0) with Mermaid code for all ServiceNow modules:
+Done! I've created a comprehensive use case diagrams document at [d:/workspace/SNowProject/usecaseslist.md](cci:7://file:///d:/workspace/SNowProject/usecaseslist.md:0:0-0:0) with Mermaid code for all microservices modules:
 
 **Use Case Diagrams Included:**
 

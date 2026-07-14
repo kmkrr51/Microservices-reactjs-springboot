@@ -1,4 +1,4 @@
-# Business Requirements - ITOM (IT Operations Management) Module
+﻿# Business Requirements - ITOM (IT Operations Management) Module
 ## Cloud-Native Microservice & AI/Agentic AI Replacement Application
 
 ### Document Information
@@ -385,7 +385,7 @@ This document outlines business requirements for a cloud-native, AI/Agentic AI-p
 - **MTTR Reduction:** 60% improvement
 - **Outage Prevention:** 90% of potential outages prevented
 - **Resource Utilization:** 40% improvement
-- **Cost Reduction:** 50% vs. ServiceNow
+- **Cost Reduction:** 50% vs. microservices
 - **System Uptime:** 99.99%
 - **AI Accuracy:** >95% for predictions
 
