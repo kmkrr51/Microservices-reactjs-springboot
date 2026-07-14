@@ -16,7 +16,6 @@ import lombok.Setter;
 @Builder
 public class CreateIncidentRequest {
 
-  @NotBlank(message = "Incident number is required")
   private String incidentNumber;
 
   @NotBlank(message = "Title is required")
@@ -27,6 +26,8 @@ public class CreateIncidentRequest {
   @NotNull(message = "Priority is required")
   private Priority priority;
 
-  @NotBlank(message = "Reporter is required")
   private String reporter;
+
+  // accepted from frontend form
+  private String createdBy;
 }

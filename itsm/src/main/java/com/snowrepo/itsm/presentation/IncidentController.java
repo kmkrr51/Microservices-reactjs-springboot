@@ -38,14 +38,21 @@ public class IncidentController {
   public ResponseEntity<IncidentResponse> createIncident(
       @Valid @RequestBody CreateIncidentRequest request
   ) {
-    log.info("Creating incident: {}", request.getIncidentNumber());
+    String incidentNumber = (request.getIncidentNumber() != null && !request.getIncidentNumber().isBlank())
+        ? request.getIncidentNumber()
+        : "INC-" + System.currentTimeMillis();
+    String reporter = (request.getReporter() != null && !request.getReporter().isBlank())
+        ? request.getReporter()
+        : (request.getCreatedBy() != null ? request.getCreatedBy() : "system");
+
+    log.info("Creating incident: {}", incidentNumber);
 
     Incident incident = incidentService.createIncident(
-        request.getIncidentNumber(),
+        incidentNumber,
         request.getTitle(),
         request.getDescription(),
         request.getPriority(),
-        request.getReporter(),
+        reporter,
         "system"
     );
 
