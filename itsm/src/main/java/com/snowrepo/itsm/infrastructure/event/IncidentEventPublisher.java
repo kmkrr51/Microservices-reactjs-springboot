@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 @Slf4j
+@SuppressWarnings("null")
 public class IncidentEventPublisher {
 
   private final KafkaTemplate<String, Object> kafkaTemplate;

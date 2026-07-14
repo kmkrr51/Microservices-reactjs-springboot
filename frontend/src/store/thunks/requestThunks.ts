@@ -6,10 +6,10 @@ export const fetchRequests = createAsyncThunk(
   "requests/fetchRequests",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await apiClient.get<{ requests: ServiceRequest[] }>(
-        "/requests",
+      const response = await apiClient.get<ServiceRequest[]>(
+        "/api/v1/requests",
       );
-      return response.data.requests || [];
+      return response.data;
     } catch (error: any) {
       return rejectWithValue(
         error.message || "Failed to fetch requests",
@@ -23,7 +23,7 @@ export const fetchRequestById = createAsyncThunk(
   async (id: string, { rejectWithValue }) => {
     try {
       const response = await apiClient.get<ServiceRequest>(
-        `/requests/${id}`,
+        `/api/v1/requests/${id}`,
       );
       return response.data;
     } catch (error: any) {
@@ -39,7 +39,7 @@ export const createRequest = createAsyncThunk(
   async (data: any, { rejectWithValue }) => {
     try {
       const response = await apiClient.post<ServiceRequest>(
-        "/requests",
+        "/api/v1/requests",
         data,
       );
       return response.data;
@@ -59,7 +59,7 @@ export const updateRequestThunk = createAsyncThunk(
   ) => {
     try {
       const response = await apiClient.patch<ServiceRequest>(
-        `/requests/${id}`,
+        `/api/v1/requests/${id}`,
         data,
       );
       return response.data;

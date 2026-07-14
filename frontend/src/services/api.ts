@@ -3,11 +3,11 @@ import { ApiError, ApiErrorResponse } from "@/types";
 
 // Service URLs for Spring Boot microservices
 export const SERVICE_URLS = {
-  CMDB: "http://localhost:8000",
-  ITSM: "http://localhost:8001",
-  ITOM: "http://localhost:8002",
-  ITAM: "http://localhost:8003",
-  API_GATEWAY: "http://localhost:8080",
+  CMDB: "http://localhost:8015",
+  ITSM: "http://localhost:8016",
+  ITOM: "http://localhost:8018",
+  ITAM: "http://localhost:8017",
+  API_GATEWAY: "http://localhost:8089",
 };
 
 const API_BASE_URL = SERVICE_URLS.ITSM;

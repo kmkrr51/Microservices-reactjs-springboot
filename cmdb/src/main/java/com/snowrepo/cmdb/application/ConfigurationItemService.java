@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @RequiredArgsConstructor
 @Slf4j
+@SuppressWarnings("null")
 public class ConfigurationItemService {
 
   private final ConfigurationItemRepository ciRepository;

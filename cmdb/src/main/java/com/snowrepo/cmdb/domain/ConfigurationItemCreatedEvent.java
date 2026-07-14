@@ -1,7 +1,6 @@
 package com.snowrepo.cmdb.domain;
 
 import com.snowrepo.domain.DomainEvent;
-import java.time.LocalDateTime;
 import java.util.UUID;
 public class ConfigurationItemCreatedEvent extends DomainEvent {
 

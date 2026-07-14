@@ -6,10 +6,10 @@ export const fetchIncidents = createAsyncThunk(
   "incidents/fetchIncidents",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await apiClient.get<{ incidents: Incident[] }>(
-        "/incidents",
+      const response = await apiClient.get<Incident[]>(
+        "/api/v1/incidents",
       );
-      return response.data.incidents || [];
+      return response.data;
     } catch (error: any) {
       return rejectWithValue(
         error.message || "Failed to fetch incidents",
@@ -23,7 +23,7 @@ export const fetchIncidentById = createAsyncThunk(
   async (id: string, { rejectWithValue }) => {
     try {
       const response = await apiClient.get<Incident>(
-        `/incidents/${id}`,
+        `/api/v1/incidents/${id}`,
       );
       return response.data;
     } catch (error: any) {
@@ -38,16 +38,11 @@ export const createIncident = createAsyncThunk(
   "incidents/createIncident",
   async (data: any, { rejectWithValue }) => {
     try {
-      const createResponse = await apiClient.post<{ id: string; message: string }>(
-        "/incidents",
+      const createResponse = await apiClient.post<Incident>(
+        "/api/v1/incidents",
         data,
       );
-      const incidentId = createResponse.data.id;
-
-      const getResponse = await apiClient.get<Incident>(
-        `/incidents/${incidentId}`,
-      );
-      return getResponse.data;
+      return createResponse.data;
     } catch (error: any) {
       return rejectWithValue(
         error.message || "Failed to create incident",
@@ -63,9 +58,8 @@ export const updateIncidentThunk = createAsyncThunk(
     { rejectWithValue },
   ) => {
     try {
-      const response = await apiClient.patch<Incident>(
-        `/incidents/${id}`,
-        data,
+      const response = await apiClient.put<Incident>(
+        `/api/v1/incidents/${id}/status?status=${data.status}`,
       );
       return response.data;
     } catch (error: any) {

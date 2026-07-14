@@ -2,7 +2,7 @@ import axios from "axios";
 import { User } from "@/types";
 
 const authClient = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: "http://localhost:8089",
   headers: {
     "Content-Type": "application/json",
   },

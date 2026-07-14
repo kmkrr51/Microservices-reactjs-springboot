@@ -6,10 +6,10 @@ export const fetchProblems = createAsyncThunk(
   "problems/fetchProblems",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await apiClient.get<{ problems: Problem[] }>(
-        "/problems",
+      const response = await apiClient.get<Problem[]>(
+        "/api/v1/problems",
       );
-      return response.data.problems || [];
+      return response.data;
     } catch (error: any) {
       return rejectWithValue(
         error.message || "Failed to fetch problems",
@@ -23,7 +23,7 @@ export const fetchProblemById = createAsyncThunk(
   async (id: string, { rejectWithValue }) => {
     try {
       const response = await apiClient.get<Problem>(
-        `/problems/${id}`,
+        `/api/v1/problems/${id}`,
       );
       return response.data;
     } catch (error: any) {
@@ -39,7 +39,7 @@ export const createProblem = createAsyncThunk(
   async (data: any, { rejectWithValue }) => {
     try {
       const response = await apiClient.post<Problem>(
-        "/problems",
+        "/api/v1/problems",
         data,
       );
       return response.data;
@@ -59,7 +59,7 @@ export const updateProblemThunk = createAsyncThunk(
   ) => {
     try {
       const response = await apiClient.patch<Problem>(
-        `/problems/${id}`,
+        `/api/v1/problems/${id}`,
         data,
       );
       return response.data;

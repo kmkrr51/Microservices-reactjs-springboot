@@ -3,7 +3,6 @@ package com.snowrepo.util;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
@@ -11,10 +10,6 @@ import java.util.Date;
  * Utility class for date and time operations.
  */
 public class DateTimeUtils {
-
-  private static final String ISO_DATE_FORMAT = "yyyy-MM-dd";
-  private static final String ISO_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
-  private static final String ISO_DATETIME_WITH_ZONE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 
   private DateTimeUtils() {
     throw new AssertionError("Cannot instantiate utility class");

@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @RequiredArgsConstructor
 @Slf4j
+@SuppressWarnings("null")
 public class DiscoveredAssetService {
 
   private final DiscoveredAssetRepository assetRepository;

@@ -1,7 +1,6 @@
 package com.snowrepo.cmdb.domain;
 
 import com.snowrepo.domain.AggregateRoot;
-import com.snowrepo.domain.DomainEvent;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
