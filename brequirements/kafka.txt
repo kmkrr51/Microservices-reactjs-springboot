@@ -1,0 +1,29 @@
+docker run --name my-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=cmdb_db -p 5432:5432 -d postgres:15
+
+docker run --name my-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=cmdb_db -p 5432:5432 -d postgres:15
+
+docker run --name my-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=cmdb_db -p 5432:5432 -d postgres:15
+
+docker run --name my-postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=secret -e POSTGRES_DB=cmdb_db -p 5432:5432 -d postgres:15
+
+
+
+docker run -d --name kafka -p 9092:9092 --link zookeeper wurstmeister/kafka   -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+
+Add environment variable: -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+
+Add environment variable: -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+
+docker run --name keycloak -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=secret quay.io/keycloak/keycloak:latest start-dev
+
+Running **Kafka in Docker** is a common way to quickly set up a local development environment. Here’s a step‑by‑step guide you can follow:
+
+
+
+
+
+Sources: Official Kafka Docker Hub documentation, Wurstmeister Kafka image setup guides.
+
+---
+
+✅ With this setup, you’ll have Kafka running locally in Docker, accessible on `localhost:9092`. For production or multi‑broker setups, it’s better to use **Docker Compose** to manage Zookeeper and Kafka together. Would you like me to show you a ready‑to‑use `docker-compose.yaml` for Kafka + Zookeeper?

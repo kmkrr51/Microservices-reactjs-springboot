@@ -87,13 +87,31 @@ const LoginPage: React.FC = () => {
         </form>
 
         <div className="mt-6 pt-6 border-t border-secondary-200">
-          <p className="text-center text-sm text-secondary-600">
-            Demo credentials:
-            <br />
-            Email: admin@example.com
-            <br />
-            Password: password123
+          <p className="text-center text-sm font-semibold text-secondary-900 mb-3">
+            Test Credentials:
           </p>
+          <div className="space-y-2 text-xs text-secondary-600">
+            <div className="bg-secondary-50 p-2 rounded">
+              <p className="font-medium text-secondary-900">Admin</p>
+              <p>Email: admin@example.com</p>
+              <p>Password: Admin@123456</p>
+            </div>
+            <div className="bg-secondary-50 p-2 rounded">
+              <p className="font-medium text-secondary-900">ITSM Manager</p>
+              <p>Email: itsm.manager@example.com</p>
+              <p>Password: ITSM@123456</p>
+            </div>
+            <div className="bg-secondary-50 p-2 rounded">
+              <p className="font-medium text-secondary-900">CMDB Admin</p>
+              <p>Email: cmdb.admin@example.com</p>
+              <p>Password: CMDB@123456</p>
+            </div>
+            <div className="bg-secondary-50 p-2 rounded">
+              <p className="font-medium text-secondary-900">Operations Manager</p>
+              <p>Email: ops.manager@example.com</p>
+              <p>Password: Ops@123456</p>
+            </div>
+          </div>
         </div>
       </Card>
     </div>

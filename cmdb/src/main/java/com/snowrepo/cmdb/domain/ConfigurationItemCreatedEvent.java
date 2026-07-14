@@ -3,21 +3,40 @@ package com.snowrepo.cmdb.domain;
 import com.snowrepo.domain.DomainEvent;
 import java.time.LocalDateTime;
 import java.util.UUID;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class ConfigurationItemCreatedEvent extends DomainEvent {
 
   private UUID ciId;
   private String ciName;
   private String ciType;
   private ConfigurationItem.CIStatus status;
+
+  public ConfigurationItemCreatedEvent() {
+    super(UUID.randomUUID(), "ConfigurationItem");
+  }
+
+  public ConfigurationItemCreatedEvent(UUID ciId, String ciName, String ciType, ConfigurationItem.CIStatus status) {
+    super(ciId, "ConfigurationItem");
+    this.ciId = ciId;
+    this.ciName = ciName;
+    this.ciType = ciType;
+    this.status = status;
+  }
+
+  public UUID getCiId() {
+    return ciId;
+  }
+
+  public String getCiName() {
+    return ciName;
+  }
+
+  public String getCiType() {
+    return ciType;
+  }
+
+  public ConfigurationItem.CIStatus getStatus() {
+    return status;
+  }
 
   @Override
   public String getEventType() {

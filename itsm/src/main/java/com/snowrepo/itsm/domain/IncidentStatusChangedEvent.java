@@ -8,7 +8,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class IncidentStatusChangedEvent extends DomainEvent {
@@ -16,6 +15,10 @@ public class IncidentStatusChangedEvent extends DomainEvent {
   private UUID incidentId;
   private String incidentNumber;
   private Incident.IncidentStatus newStatus;
+
+  public IncidentStatusChangedEvent() {
+    super(UUID.randomUUID(), "Incident");
+  }
 
   @Override
   public String getEventType() {

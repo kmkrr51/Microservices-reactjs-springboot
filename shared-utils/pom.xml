@@ -16,6 +16,13 @@
   <description>Shared utility classes and helper functions</description>
 
   <dependencies>
+    <!-- Shared Modules -->
+    <dependency>
+      <groupId>com.snowrepo</groupId>
+      <artifactId>shared-exceptions</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+
     <!-- Lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>

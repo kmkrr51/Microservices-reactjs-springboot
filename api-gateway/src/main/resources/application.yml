@@ -1,6 +1,9 @@
 spring:
   application:
     name: api-gateway
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
   cloud:
     gateway:
       routes:
@@ -24,7 +27,7 @@ spring:
           jwk-set-uri: http://localhost:8081/auth/realms/snowrepo/protocol/openid-connect/certs
 
 server:
-  port: 8080
+  port: 8089
 
 jwt:
   secret: snowrepo-secret-key-for-jwt-token-generation-and-validation

@@ -8,10 +8,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class HardwareAssetCreatedEvent extends DomainEvent {
+
+  public HardwareAssetCreatedEvent() {
+    super(UUID.randomUUID(), "HardwareAsset");
+  }
 
   private UUID assetId;
   private String assetTag;
