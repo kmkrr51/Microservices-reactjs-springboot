@@ -30,10 +30,15 @@ public class ChangeController {
   @PostMapping
   @Operation(summary = "Create a new change")
   public ResponseEntity<ChangeResponse> createChange(@RequestBody Map<String, Object> body) {
-    ChangeType type = body.get("type") != null
-        ? ChangeType.valueOf((String) body.get("type")) : ChangeType.NORMAL;
-    RiskLevel risk = body.get("riskLevel") != null
-        ? RiskLevel.valueOf((String) body.get("riskLevel")) : RiskLevel.LOW;
+    // frontend may send "changeType" or "type"
+    String typeStr = body.get("type") != null ? (String) body.get("type")
+        : (String) body.getOrDefault("changeType", "NORMAL");
+    ChangeType type;
+    try { type = ChangeType.valueOf(typeStr); } catch (Exception e) { type = ChangeType.NORMAL; }
+
+    String riskStr = (String) body.getOrDefault("riskLevel", "LOW");
+    RiskLevel risk;
+    try { risk = RiskLevel.valueOf(riskStr); } catch (Exception e) { risk = RiskLevel.LOW; }
 
     Change change = changeService.createChange(
         (String) body.getOrDefault("changeNumber", "CHG-" + System.currentTimeMillis()),

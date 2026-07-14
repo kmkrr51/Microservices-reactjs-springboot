@@ -30,10 +30,13 @@ public class ServiceRequestController {
   @PostMapping
   @Operation(summary = "Create a new service request")
   public ResponseEntity<ServiceRequestResponse> createRequest(@RequestBody Map<String, Object> body) {
-    RequestType type = body.get("requestType") != null
-        ? RequestType.valueOf((String) body.get("requestType")) : RequestType.ROUTINE;
-    RequestPriority priority = body.get("priority") != null
-        ? RequestPriority.valueOf((String) body.get("priority")) : RequestPriority.MEDIUM;
+    String typeStr = (String) body.getOrDefault("requestType", "ROUTINE");
+    RequestType type;
+    try { type = RequestType.valueOf(typeStr); } catch (Exception e) { type = RequestType.ROUTINE; }
+
+    String priorityStr = (String) body.getOrDefault("priority", "MEDIUM");
+    RequestPriority priority;
+    try { priority = RequestPriority.valueOf(priorityStr); } catch (Exception e) { priority = RequestPriority.MEDIUM; }
 
     ServiceRequest request = serviceRequestService.createRequest(
         (String) body.getOrDefault("requestNumber", "REQ-" + System.currentTimeMillis()),
