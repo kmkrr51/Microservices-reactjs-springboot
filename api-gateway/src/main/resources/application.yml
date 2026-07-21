@@ -35,11 +35,11 @@ spring:
         - id: itom-service
           uri: http://localhost:8018
           predicates:
-            - Path=/api/v1/assets/**
+            - Path=/api/v1/itom/**
         - id: itam-service
           uri: http://localhost:8017
           predicates:
-            - Path=/api/v1/assets/**
+            - Path=/api/v1/itam/**
         - id: auth-service
           uri: http://localhost:8016
           predicates:
